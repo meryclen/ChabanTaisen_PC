@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4067578a1fcf46986e51b41028902, type: 3}
+  m_Name: Enemy0GroundSettings
+  m_EditorClassIdentifier: Assembly-CSharp::GroundSettings
+  rayLength: 1.15
+  rayLengthDead: 0
+  raysLength: 2.5
+  raysLengthDead: 0
+  raysNum: 4
+  rayOffset: 1
+  rayOffsetDead: 0
+  gravityAcceleration: 20
+  gravityVelocityMax: 15
+  slopeSlideLimit: 60
+  slideSpeed: 5
+  pushSpeed: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 33024
+  goalMask:
+    serializedVersion: 2
+    m_Bits: 0
+  spherecastRadius: 0.2
+  skinWidth: 0.1
+  spherecastOffset: 1
+  decreaseValue: 0.2
+  wallThreshold: 0.8
+  hitCheckOriginOffsetY: 0.75
+  hitPushCheckOriginOffsetY: 0.25
+  hitPushCheckOriginOffsetY_Dead: 0
+  deadValue: 10
+  damageValue: 5

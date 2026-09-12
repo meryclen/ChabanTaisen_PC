@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7004743057251159376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8646891632922244367}
+  - component: {fileID: 3467492441957037343}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: PoolManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8646891632922244367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004743057251159376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3467492441957037343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004743057251159376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3cb4af9c5b8894b95d47790832f229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+  beam0GO: {fileID: 8762237108424698933, guid: 09895fd4dccd40346b99d281a9a3c0df, type: 3}
+  beam1GO: {fileID: 8762237108424698933, guid: 873032a8e4ec7774ca8922d874145923, type: 3}
+  grenade0GO: {fileID: 8762237108424698933, guid: bd92557d15c777d4289c6d009e4941f0, type: 3}
+  enemy0GO: {fileID: 3966631550023432677, guid: 50314bd161c7b3a4583ca5828342d714, type: 3}
+  enemy1GO: {fileID: 3689625265579145293, guid: fc299e8e6624dae4cac2d30960ed73c6, type: 3}
+  enemy2GO: {fileID: 7695399033473094929, guid: 3b6e5c9127abe1f4f93e5df235eab372, type: 3}
+  explode0GO: {fileID: 4287854071080120959, guid: 4af15e9b55e2c264283ceee0b8d1c0f1, type: 3}
+  explode1GO: {fileID: 1852012159766764126, guid: ba8ddd7cca04b3e41aebd423d59b9b2e, type: 3}
+  explode2GO: {fileID: 4287854071080120959, guid: 74eaffb07e814504eadd0d25dca05139, type: 3}
+  explode3GO: {fileID: 1852012159766764126, guid: e15b833067636664c9c69f1a2cce4be7, type: 3}
+  explode4GO: {fileID: 1852012159766764126, guid: c5f587ac52e03374a9cec5de27c30a56, type: 3}
+  damagePlayer: {fileID: 0}
+  beam0_size: 32
+  beam1_size: 64
+  grenade0_size: 32
+  explode0_size: 32
+  explode1_size: 32
+  explode2_size: 64
+  explode3_size: 16
+  explode4_size: 16
+  enemy0_size: 16
+  enemy1_size: 16
+  enemy2_size: 16
+  projectileEntries: []
+  enemyEntries: []
+  explodeEntries: []
+  allEnemies0: []
+  allEnemies1: []
+  allEnemies2: []
+  allEnemies0GO: []
+  allEnemies1GO: []
+  allEnemies2GO: []
