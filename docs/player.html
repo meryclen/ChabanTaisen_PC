@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>player</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="item">Player全体を管理するクラスになります。</div>
+        <pre><code>
+using UnityEngine;
+using System.Collections.Generic;
+
+public class Player : MonoBehaviour
+{
+    [SerializeField] InputManager inputManager;
+    [SerializeField] Fire fire;
+    [SerializeField] GroundMoter groundMoter;
+    [SerializeField] Anim anim;
+    [SerializeField] Pistol2 pistol2;
+    [SerializeField] Line line;
+    [SerializeField] DamageController damageController;
+    [SerializeField] FlashController flashController;
+    [SerializeField] StatusPlayer statusPlayer;
+
+    List&lt;ITickable&gt; tickables = new();    
+
+    void Awake()
+    {
+        inputManager.Initialize(this, groundMoter, anim);
+        fire.Initialize(inputManager, anim);
+        anim.Initialize(inputManager, groundMoter, line);
+        pistol2.Initialize(anim);
+        line.Initialize();
+        damageController.Initialize(null, null, groundMoter, anim);
+    }
+    void Start()
+    {
+        tickables.Add(inputManager);
+        tickables.Add(fire);
+        tickables.Add(groundMoter);
+        tickables.Add(pistol2);
+        tickables.Add(anim);
+    }
+
+    void Update()
+    {
+        if (statusPlayer.PlayerStatus != PlayerStatus.Dead)
+        {
+            foreach (var t in tickables)
+            {
+                t.Tick();
+            }
+        }
+        else
+        {
+            groundMoter.Tick();
+            anim.Tick();
+        }
+        transform.position += groundMoter.Move * Time.deltaTime;
+        groundMoter.Move = Vector3.zero;
+    }
+    void LateUpdate()
+    {
+        if (!statusPlayer.IsHpZero)
+        {
+            foreach (var t in tickables)
+            {
+                t.LateTick();
+            }
+        }
+        else
+        {
+            anim.LateTick();
+        }
+    }
+}
+        </code></pre>
+        <p>[SerializeField]で、Playerについている各コンポーネントの参照をセットします。Awake()で、各クラスのInitializeを呼んで各コンポーネントの参照を配ります。</p>
+        <p>Playerについている各コンポーネントのUpdate()およびLateUpdate()を、ITickableとして本クラスのUpdate()およびLateUpdate()にまとめ、制御します。
+            １フレームで変化するtransformの差分であるMoveに、inputManagerでユーザー操作入力を加算→groundMoterで重力や吹っ飛びで移動した差分を加算します。</p>
+    </body>
+</html>

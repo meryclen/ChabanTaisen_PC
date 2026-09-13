@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>rigbuilder</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <p><h2>PlayerのRig構造（省略している階層があります）</h2>
+        <div class="hierarchy">
+            <details open>
+                <summary>Player</summary>
+                <div class="item">RigBuilder</div>
+                <div class="children">
+                    <details open>
+                        <summary>Graphics</summary>
+                        <div class="item">GraphicsのlocalPosition.yで高さを調節</div>
+                        <div class="children">
+                            <details open>
+                                <summary>Character1_Hips</summary>
+                                <div class="item">アーマチュアルート</div>
+                                <div class="children">
+                                    <details open>
+                                        <summary>Character1_LeftHand</summary>
+                                        <div class="item">FingerCtrlLeft→FingerCtrlを継承。左手の指をローカルpitch回転。</div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>Character1_LeftHandIndex1</summary>
+                                                <div class="item">index（人差し指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_LeftHandIndex2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_LeftHandIndex3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_LeftHandIndex4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_LeftHandMiddle1</summary>
+                                                <div class="item">middle（中指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_LeftHandMiddle2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_LeftHandMiddle3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_LeftHandMiddle4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_LeftHandPinky1</summary>
+                                                <div class="item">pinky（小指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_LeftHandPinky2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_LeftHandPinky3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_LeftHandPinky4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_LeftHandRing1</summary>
+                                                <div class="item">ring（薬指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_LeftHandRing2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_LeftHandRing3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_LeftHandRing4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_LeftHandThumb1</summary>
+                                                <div class="item">thumb（親指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_LeftHandThumb2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_LeftHandThumb3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_LeftHandThumb4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                        </div>
+                                    </details>
+                                    <details open>
+                                        <summary>Character1_RightHand</summary>
+                                        <div class="item">FingerCtrlRight→FingerCtrlを継承。右手の指をローカルpitch回転。</div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>Character1_RightHandIndex1</summary>
+                                                <div class="item">index（人差し指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_RightHandIndex2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_RightHandIndex3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_RightHandIndex4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_RightHandMiddle1</summary>
+                                                <div class="item">middle（中指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_RightHandMiddle2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_RightHandMiddle3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_RightHandMiddle4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_RightHandPinky1</summary>
+                                                <div class="item">pinky（小指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_RightHandPinky2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_RightHandPinky3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_RightHandPinky4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_RightHandRing1</summary>
+                                                <div class="item">ring（薬指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_RightHandRing2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_RightHandRing3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_RightHandRing4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details>
+                                                <summary>Character1_RightHandThumb1</summary>
+                                                <div class="item">thumb（親指）</div>
+                                                <div class="item">proximal（第一関節）</div>
+                                                <div class="children">
+                                                    <details>
+                                                        <summary>Character1_RightHandThumb2</summary>
+                                                        <div class="item">intermediate（第二関節）</div>
+                                                        <div class="children">
+                                                            <details>
+                                                                <summary>Character1_RightHandThumb3</summary>
+                                                                <div class="item">distal（第三関節）</div>
+                                                                <div class="children">
+                                                                    <details>
+                                                                        <summary>Character1_RightHandThumb4</summary>
+                                                                        <div class="item">未使用</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                            <details open>
+                                                <summary>GunPivotBone</summary>
+                                                <div class="item">武器を持たせるための空オブジェクト</div>
+                                                <div class="children">
+                                                    <details open>
+                                                        <summary>Pistol2</summary>
+                                                        <div class="item">武器（銃）</div>
+                                                        <div class="item">Pistol2─銃の見た目調整</div>
+                                                        <div class="item">SoundPistol→SoundManagerを継承。銃の見た目調整。</div>
+                                                        <div class="item">AudioSource─銃の発射音を鳴らすAudioSource</div>
+                                                        <div class="children">
+                                                            <details open>
+                                                                <summary>Line</summary>
+                                                                <div class="item">Line─レーザーポインタ</div>
+                                                                <div class="children">
+                                                                    <details open>
+                                                                        <summary>Lazerpointer</summary>
+                                                                        <div class="item">レーザーポインタが当たった場所</div>
+                                                                    </details>
+                                                                </div>
+                                                            </details>
+                                                        </div>
+                                                    </details>
+                                                </div>
+                                            </details>
+                                        </div>
+                                    </details>
+                                </div>
+                                <div class="children">
+                                    <details open>
+                                        <summary>Rig</summary>
+                                        <div class="item">Rig</div>
+                                        <div class="children">
+                                            <details open>
+                                                <summary>HipsConstraint</summary>
+                                                <div class="item">Multi-Parent Constraint─腰を動かす</div>
+                                            </details>
+                                            <details open>
+                                                <summary>LeftArmIK</summary>
+                                                <div class="item">Two Bone IK Constraint─左手IK</div>
+                                            </details>
+                                            <details open>
+                                                <summary>RightArmIK</summary>
+                                                <div class="item">Two Bone IK Constraint─右手IK</div>
+                                            </details>
+                                            <details open>
+                                                <summary>LeftFootIK</summary>
+                                                <div class="item">Two Bone IK Constraint─左足IK</div>
+                                            </details>
+                                            <details open>
+                                                <summary>RightFootIK</summary>
+                                                <div class="item">Two Bone IK Constraint─右足IK</div>
+                                            </details>
+                                            <details open>
+                                                <summary>NeckConstraint</summary>
+                                                <div class="item">Multi-Parent Constraint─首を動かす</div>
+                                            </details>
+                                            <details open>
+                                                <summary>LeftFingersConstraint</summary>
+                                                <div class="item">Multi-Rotation Constraint─左手の指をローカルpitch回転</div>
+                                            </details>
+                                            <details open>
+                                                <summary>RightFingersConstraint</summary>
+                                                <div class="item">Multi-Rotation Constraint─右手の指をローカルpitch回転</div>
+                                            </details>
+                                        </div>
+                                    </details>
+                                </div>
+                            </details>
+                        </div>
+                    <details>
+                        <summary>IKTargets</summary>
+                        <div class="children">
+                            <div class="item">IKTargetのTransformです。ConstraintのSource Objectsにセットします。</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>RayOrigins</summary>
+                        <div class="children">
+                            <div class="item">Raycastのoriginとして使うTransformです。Animクラスで使います。</div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div></p>
+
+    </body>
+</html>

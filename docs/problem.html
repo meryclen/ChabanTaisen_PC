@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>problem</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <ul>
+            <li>問題解決やリファクタリングにChatGPTをフル活用しました。ChatGPTとの会話は備忘録として全てテキストで保存するようにしています。後で同じ問題に直面した場合にすぐに検索できるようにするためです。</li>
+            <li>FPS落ちが気になったため、<strong>Profiler</strong>を用いて問題のGC Alloc発生個所を特定し、極力GC Allocを発生させないようにしました。</li>
+            <li>Blenderで手の指のウェイトペイントをする際には、他の身体パーツのように大雑把に塗るとうまく曲がってくれなくなるため、手間はかかりましたが手を拡大して頂点ごとに設定しました。また、UnityでMulti-Rotation Constraintをそれぞれの指のそれぞれの関節につけたため、片手で１５個ものConstraintを扱わなければならなくなり苦労しました。</li>
+            <li>Animation RiggingのRigが壊れて動きがおかしくなることが何度がありました。gitで戻しても上手く行かないため、何度か組み直しになりました。また、rigBuilder.Build();しないとik.weightが反映されない問題に直面しました。今回はStateのWrite Defaultsにチェックを入れることで対応できましたが、Animation Riggingのバグであるとの情報も得ました。</li>
+            <li>重力で落下する、ダメージを受けると吹っ飛ぶ、などのリアルな挙動（ニュートン力学）を<strong>自作Character Controller</strong>で実現でするのに苦労しました。Playerが地形に引っかかって動けなくなってしまったり、地形をすり抜けてしまうバグが多発しました。</li>
+            <li>git cloneが一部うまく行かない問題に直面しました。Terrain関連とNavMesh関連の.assetが特殊な構造であるらしく、cloneすると特定アドレスのバイト値が変わってしまい、clone後にUnityEditorで認識しなくなりました。Git LFSを導入して.gitattributesを適切に書き換えたところ問題は解消しました。</li>
+            <li><strong>unityroom</strong>にアップロードするためにWebGLビルドにする必要があったのですが、実際にブラウザ上で動かしてみると解像度がおかしくなる問題に直面しました。PCビルドではScreen.SetResolutionで解像度を変更できるようにしていたのですが、WebGLではそれができず、ブラウザ側でJavaScriptで指定するようです。そのため、WebGL版は解像度に関する項目を全て削除しました。</li>
+            <li>WebGL版で足IKがうまく動かない問題に直面しました。PC版では足が接地して足IKがオンになるタイミングでWebGL版では足が接地してくれません。Raycastの長さを長くしたところ接地はするようになったが足の動きがおかしいので、ik.weightの大きさをいじったところかなり改善されたため、ひとまずはこれでよしとしました。</li>
+            <li>PC版ではApplication.persistentDataPathにセーブデータを保存するようにしていたのですが、WebGL版ではローカルのブラウザ上で動かす場合は問題ないが、unityroomで動かす場合はセーブデータが反映されないと言う問題に直面しました。
+調べたところ、WebGLの場合はApplication.persistentDataPathの保存先がブラウザのIndexedDBになり、ファイルシステムへの書き込みは非同期であり、永続化を確実にするためには、FS.syncfs(false, ...)を読んで保留中の書き込みをIndexedDBへフラッシュする必要がある、とのことでした。見よう見まねでやってみたところ、セーブデータが反映されるようになりました。</li>
+        </ul>
+    </body>
+</html>

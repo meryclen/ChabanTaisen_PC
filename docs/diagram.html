@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>diagram</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p><h2>ヒエラルキー</h2>
+        <div class="hierarchy">
+            <details open>
+                <summary>Scenes</summary>
+                <div class="children">
+                    <details>
+                        <summary>Title</summary>
+                        <div class="children">
+                            <details>
+                                <summary>Main Camera Title</summary>
+                                <div class="item">CameraManagerWin─Titleのカメラマネージャー。StageClearのCameraManagerWinと同一スクリプト。</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>AudioSource</summary>
+                                <div class="item">AudioSource─ボタン選択、決定、キャンセルのSE用</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>EventSystem</summary>
+                                <div class="item">Input System UI Input Module─Player.inputactionsをセット</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>TitleManager</summary>
+                                <div class="item">TitleManager─TitleClearマネージャー</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>PlayerTitle</summary>
+                                <div class="item">Title用Player。ShapeTitle→Shapeを継承。シェイプキー処理。</div>
+                            </details>
+                        </div>
+                    </details>
+                </div>
+            
+                <div class="children">
+                    <details>
+                        <summary>Stage1</summary>
+                        <div class="children">
+                            <details>
+                                <summary>Main Camera</summary>
+                                <div class="item">CameraManager─Titleのカメラマネージャー</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>AudioSource</summary>
+                                <div class="item">AudioSource─ボタン選択、決定、キャンセルのSE用</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>GameManager</summary>
+                                <div class="item">GameManager─ゲームマネージャー</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Stage1</summary>
+                                <div class="item">Stage1→Stageを継承。Stage1進行マネージャー。敵の出現を管理。</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>PoolManager</summary>
+                                <div class="item">PoolManager─ObjectPool&lt;T&gt;を使ってオブジェクトを生成して管理</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>TargetPoints</summary>
+                                <div class="item">Enemy0（移動タイプ敵）の巡回ターゲット</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>SpawnPoints0</summary>
+                                <div class="item">Enemy0（移動タイプ敵）の出現ポイント</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>SpawnPoints1</summary>
+                                <div class="item">Enemy1（固定砲台大）の出現ポイント</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>SpawnPoints2</summary>
+                                <div class="item">Enemy2（固定砲台小）の出現ポイント</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Goal</summary>
+                                <div class="item">ステージクリア目標到達ポイント</div>
+                                    <div class="children">
+                                        <details>
+                                            <summary>Collider</summary>
+                                            <div class="item">BoxCollider─Playerが触れるとステージクリア</div>
+                                        </details>
+                                    </div>
+                                    <div class="children">
+                                        <details>
+                                            <summary>GoalPoint</summary>
+                                            <div class="item">Goalの見た目処理</div>
+                                        </details>
+                                    </div>
+                                    <div class="children">
+                                        <details>
+                                            <summary>UI</summary>
+                                            <div class="item">Canvasではない。&quot;Target Point&quot;の文字表示。</div>
+                                        </details>
+                                    </div>
+                            </details>                        
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Canvas_HUD</summary>
+                                <div class="item">Canvas</div>
+                                <div class="children">
+                                    <details>
+                                        <summary>HpBar</summary>
+                                        <div class="children">
+                                            <details>
+                                                <summary>MaxHp</summary>
+                                                <div class="item">Image─Playerの最大HP</div>
+                                            </details>
+                                        </div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>CurHp</summary>
+                                                <div class="item">Image─Playerの現在HP</div>
+                                            </details>
+                                        </div>                                    
+                                    </details>
+                                    <details>
+                                        <summary>Timer</summary>
+                                        <div class="item">Timer─制限時間の残りを表示</div>
+                                    </details>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Canvas_System</summary>
+                                <div class="item">Canvas</div>
+                                <div class="children">
+                                    <details>
+                                        <summary>GameOverPanel</summary>
+                                        <div class="item">ゲームオーバー時に表示</div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>RestartButton</summary>
+                                                <div class="item">RestartButton─リスタートボタンの処理</div>
+                                            </details>
+                                        </div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>TitleButton</summary>
+                                                <div class="item">TitleButton─タイトルボタンの処理</div>
+                                            </details>
+                                        </div>
+                                    </details>
+                                </div>
+                                <div class="children">
+                                    <details>
+                                        <summary>PausePanel</summary>
+                                        <div class="item">ポーズ時に表示</div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>ResumeButton</summary>
+                                                <div class="item">ResumeButton─レジュームボタンの処理</div>
+                                            </details>
+                                        </div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>RestartButton</summary>
+                                                <div class="item">RestartButton─リスタートボタンの処理</div>
+                                            </details>
+                                        </div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>TitleButton</summary>
+                                                <div class="item">TitleButton─タイトルボタンの処理</div>
+                                            </details>
+                                        </div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>QuitGameButton</summary>
+                                                <div class="item">QuitGameButton─ゲーム終了ボタンの処理</div>
+                                            </details>
+                                        </div>
+                                    </details>
+                                </div>
+                                <div class="children">
+                                    <details>
+                                        <summary>ConfirmPanel</summary>
+                                        <div class="item">ゲーム終了ボタン押下時に確認を出します</div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>OkButton</summary>
+                                                <div class="item">OkButton─Okボタンの処理</div>
+                                            </details>
+                                        </div>
+                                        <div class="children">
+                                            <details>
+                                                <summary>CancelButton</summary>
+                                                <div class="item">CancelButton─キャンセルボタンの処理</div>
+                                            </details>
+                                        </div>
+                                    </details>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>EventSystem</summary>
+                                <div class="item">Input System UI Input Module─Player.inputactionsをセット</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>NavMeshOrigin</summary>
+                                <div class="item">NavMeshSurface─NavMesh Dataをベイク</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Grounds</summary>
+                                <div class="item">GroundManager─Groundオブジェクト配列を管理し、任意のGroundコンポーネントを返します。地形によって足音を変えるために使います。</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Terrain関連</summary>
+                                <div class="item">Terrain─ローポリゴン遠景</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>CloudPlane</summary>
+                                <div class="item">MeshRenderer─ShaderGraphのみで雲を動かします</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>Player</summary>
+                                <div class="item">Playerオブジェクト</div>
+                            </details>
+                        </div>
+                    </details>
+                </div>
+            
+                <div class="children">
+                    <details>
+                        <summary>StageClear</summary>
+                        <div class="children">
+                            <details>
+                                <summary>Main Camera Clear</summary>
+                                <div class="item">CameraManagerWin─StageClearのカメラマネージャー</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>AudioSource</summary>
+                                <div class="item">AudioSource─ボタン選択、決定、キャンセルのSE用</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>EventSystem</summary>
+                                <div class="item">Input System UI Input Module─Player.inputactionsをセット</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>ClearManager</summary>
+                                <div class="item">ClearManager─StageClearマネージャー</div>
+                            </details>
+                        </div>
+                        <div class="children">
+                            <details>
+                                <summary>PlayerWin</summary>
+                                <div class="item">StageClear用Player。ShapeWin→Shapeを継承。シェイプキー処理。</div>
+                            </details>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div></p>
+        
+        <p><h2>Playerのコンポーネント</h2>
+        <div class="hierarchy">
+            <details>
+                <summary>Player</summary>
+                <div class="children">
+                    <div class="item">Transform</div>
+                    <details>
+                        <summary>Animator</summary>
+                        <div class="children">
+                            <div class="item">AnimationClipを動かします</div>
+                        </div>
+                    </details>
+                    <details open>
+                        <summary>RigBuilder</summary>
+                        <div class="children">
+                            <div class="item"><a href="rigbuilder.html" target="_blank">RigBuilder</a></div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>PlayerInput</summary>
+                        <div class="children">
+                            <div class="item">Invoke Unity Events</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>InputManager</summary>
+                        <div class="children">
+                            <div class="item">InputSystemでPlayer操作入力処理</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Fire</summary>
+                        <div class="children">
+                            <div class="item">Playerの攻撃（弾を発射します）</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Bounds_Extent</summary>
+                        <div class="children">
+                            <div class="item">Boundsサイズ設定により、カメラがPlayerに接近するとPlayerが見えなくなる問題に対応</div>
+                        </div>
+                    </details>
+                    <details open>
+                        <summary>Player</summary>
+                        <div class="children">
+                            <div class="item"><a href="player.html" target="_blank">Player</a>─Player全体を管理</div>
+                        </div>
+                    </details>
+                    <details open>
+                        <summary>GroundPlayer</summary>
+                        <div class="children">
+                            <div class="item"><a href="groundplayer.html" target="_blank">GroundPlayer</a>→GroundMoterを継承</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Anim</summary>
+                        <div class="children">
+                            <div class="item">Animation RiggingのIKを使ったプレイヤーの動き</div>
+                        </div>
+                    </details>
+                    <div class="item">CapsuleCollider</div>
+                    <details>
+                        <summary>FlashController</summary>
+                        <div class="children">
+                            <div class="item">Playerや敵がダメージを受けた際に点滅させる処理</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>StatusPlayer</summary>
+                        <div class="children">
+                            <div class="item">StatusPlayer→StatusControllerを継承。PlayerのHP、状態、イベントを管理。</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>DamagePlayer</summary>
+                        <div class="children">
+                            <div class="item">DamagePlayer→DamageControllerを継承。プレイヤーがダメージを受けた時の処理。</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>SoundPlayer</summary>
+                        <div class="children">
+                            <div class="item">SoundPlayer→SoundManagerを継承。Playerの音声を鳴らす処理。AudioSourceはPlayerの口につけました。</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>SoundPlayer</summary>
+                        <div class="children">
+                            <div class="item">SoundPlayer→SoundManagerを継承。Playerの足音を鳴らす処理。</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>AudioSource</summary>
+                        <div class="children">
+                            <div class="item">Playerの足音を鳴らすAudioSource</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>ShapeNormal</summary>
+                        <div class="children">
+                            <div class="item">ShapeNormal→Shapeを継承。Playerの表情（シェイプキー）の処理。</div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div></p>
+
+        <p><h2>Enemy0のコンポーネント（他のEnemyはEnemy0のコンポーネントを削ったものです）</h2>
+        <div class="hierarchy">
+            <details>
+                <summary>Enemy0</summary>
+                <div class="children">
+                    <div class="item">Transform</div>
+                    <div class="item">MeshRenderer</div>
+                    <details>
+                        <summary>Enemy0</summary>
+                        <div class="children">
+                            <div class="item">Enemy0→Enemy→PoolableObjectを継承</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>GroundAI</summary>
+                        <div class="children">
+                            <div class="item">GroundAI→GroundMoterを継承</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>FireAI</summary>
+                        <div class="children">
+                            <div class="item">FireAI</div>
+                        </div>
+                    </details>
+                    <div class="item">BoxCollider</div>
+                    <details>
+                        <summary>StatusAI</summary>
+                        <div class="children">
+                            <div class="item">StatusAI→StatusControllerを継承</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>MoveAI</summary>
+                        <div class="children">
+                            <div class="item">MoveAI</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>FlashController</summary>
+                        <div class="children">
+                            <div class="item">Playerや敵がダメージを受けた際に点滅させる処理</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>DamageAI</summary>
+                        <div class="children">
+                            <div class="item">DamageAI→DamageControllerを継承。敵がダメージを受けた時の処理。</div>
+                        </div>
+                    </details>
+                    <div class="item">NavMeshAgent</div>
+                </div>
+            </details>
+        </div></p>
+
+        <p><h2>Scripts（ヒエラルキーにないもの）</h2>
+        <div class="hierarchy">
+            <details open>
+                <summary>Scripts</summary>
+                <div class="children">
+                    <details>
+                        <summary>ObjectPool&lt;T&gt;</summary>
+                        <div class="children">
+                            <div class="item">オブジェクトプールのシステム</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>GameSystem</summary>
+                        <div class="children">
+                            <div class="item">staticクラス。コンフィグ（難易度設定、スクリーン設定、音声設定）を保持する。また、セーブ（タイム記録）を保持する。</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>SaveUtility</summary>
+                        <div class="children">
+                            <div class="item">タイム記録を暗号化してセーブ、復号化してロードするシステム</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Classes</summary>
+                        <div class="children">
+                            <div class="item">publicな[System.Serializable]クラスをまとめました</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Enums</summary>
+                        <div class="children">
+                            <div class="item">publicなenum型をまとめました</div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div></p>
+
+    </body>
+</html>
