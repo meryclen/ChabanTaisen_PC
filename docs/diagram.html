@@ -426,14 +426,14 @@
                     <details>
                         <summary>GroundAI</summary>
                         <div class="children">
-                            <div class="item">GroundAI→GroundMoterを継承。NavMeshAgentを用いた敵の動きを制御します。</div>
+                            <div class="item">GroundAI→GroundMoterを継承</div>
                         </div>
                     </details>                    
                     <div class="item">NavMeshAgent</div>
                     <details>
                         <summary>FireAI</summary>
                         <div class="children">
-                            <div class="item">敵の攻撃（弾を発射します）砲塔の動きを制御します。</div>
+                            <div class="item">敵の攻撃処理（弾を発射します）。砲塔（turret）はローカルyaw回転。砲身（barrel）はローカルpitch回転。</div>
                         </div>
                     </details>
                     <div class="item">BoxCollider</div>
@@ -446,7 +446,7 @@
                     <details>
                         <summary>MoveAI</summary>
                         <div class="children">
-                            <div class="item">MoveAI</div>
+                            <div class="item">NavMeshAgentを用いて敵の動きを制御します</div>
                         </div>
                     </details>
                     <details>
