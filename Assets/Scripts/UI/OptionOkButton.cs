@@ -11,7 +11,7 @@ public class OptionOkButton : MonoBehaviour, IMoveHandler
     [SerializeField] GameObject difficultySettingsPanel;
     [SerializeField] GameObject optionCancelButton;
 
-    void OnEnable()
+    void Awake()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
     }

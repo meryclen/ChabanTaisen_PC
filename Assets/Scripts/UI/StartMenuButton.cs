@@ -14,11 +14,9 @@ public class StartMenuButton : MonoBehaviour, IMoveHandler
     {
         if (optionMenuPanelGO != null) optionMenuPanel =
                 optionMenuPanelGO.GetComponent<OptionMenuPanel>();
-    }
-    void OnEnable()
-    {
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
+
     void OnClick()
     {        
         startMenuPanel.SetActive(true);

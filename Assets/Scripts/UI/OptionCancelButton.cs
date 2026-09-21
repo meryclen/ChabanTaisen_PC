@@ -13,7 +13,7 @@ public class OptionCancelButton : MonoBehaviour, IMoveHandler
     [SerializeField] GameObject upItem;
     [SerializeField] GameObject downItem;
 
-    void OnEnable()
+    void Awake()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
     }

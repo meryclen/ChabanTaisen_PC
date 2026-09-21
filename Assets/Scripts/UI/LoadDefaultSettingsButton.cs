@@ -4,8 +4,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class LoadDefaultSettingsButton : MonoBehaviour
 {
-    [SerializeField] Config debugConfig;
-    [SerializeField] Config debugConfigTmp;
+    //[SerializeField] Config debugConfig;
+    //[SerializeField] Config debugConfigTmp;
 
     [SerializeField] OptionMenuPanel optionMenuPanel;
     void Awake()
@@ -28,8 +28,8 @@ public class LoadDefaultSettingsButton : MonoBehaviour
             config.Sounds[i] = true;
         }
         GameSystem.ConfigTmp = config;
-
-        debugConfig = GameSystem.Config;
-        debugConfigTmp = GameSystem.ConfigTmp;
+        GameSystem.Config = new Config(config);
+        //debugConfig = GameSystem.Config;
+        //debugConfigTmp = GameSystem.ConfigTmp;
     }
 }

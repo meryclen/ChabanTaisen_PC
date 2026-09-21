@@ -1,3 +1,8 @@
+public enum MouseSensitivityType
+{
+    Aim,
+    Camera
+}
 public enum Difficulty
 {
     Easy,

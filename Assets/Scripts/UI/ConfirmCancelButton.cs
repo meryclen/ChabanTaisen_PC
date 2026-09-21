@@ -24,6 +24,7 @@ public class ConfirmCancelButton : MonoBehaviour
     void OnDisable()
     {
         cancel.action.performed -= OnCancel;
+        GetComponent<Button>().onClick.RemoveListener(OnClick);
     }
 
     void OnClick()

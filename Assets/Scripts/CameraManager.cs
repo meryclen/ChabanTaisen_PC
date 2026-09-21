@@ -59,8 +59,10 @@ public class CameraManager : MonoBehaviour
     {        
         if (inputManager.isCameraMove)
         {
-            deltaX += inputManager.delta.x * cameraSpeed * Time.deltaTime;
-            deltaY -= inputManager.delta.y * cameraSpeed * Time.deltaTime;
+            deltaX += inputManager.delta.x * cameraSpeed *
+                GameSystem.Config.MouseSensitivityCamera * Time.deltaTime;
+            deltaY -= inputManager.delta.y * cameraSpeed *
+                GameSystem.Config.MouseSensitivityCamera * Time.deltaTime;
             deltaY = Mathf.Clamp(deltaY, minPitch, maxPitch);
         }
         Vector3 playerPos = player.position;

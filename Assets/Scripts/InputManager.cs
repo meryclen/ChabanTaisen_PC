@@ -55,7 +55,9 @@ public class InputManager : MonoBehaviour, ITickable
 
         if (!isCameraMove)
         {
-            deltaAngleX = Quaternion.AngleAxis(delta.x * lookSpeed * Time.deltaTime, Vector3.up);
+            deltaAngleX = Quaternion.AngleAxis(
+                delta.x * lookSpeed * GameSystem.Config.MouseSensitivity * Time.deltaTime,
+                Vector3.up);
             transform.rotation *= deltaAngleX;
         }
     }
@@ -83,7 +85,8 @@ public class InputManager : MonoBehaviour, ITickable
 
         if (!isCameraMove)
         {
-            deltaY -= delta.y * aimSpeed * Time.deltaTime;
+            deltaY -=
+                delta.y * aimSpeed * GameSystem.Config.MouseSensitivity * Time.deltaTime;
             deltaY = Mathf.Clamp(deltaY, -75f, 75f);
         }
     }

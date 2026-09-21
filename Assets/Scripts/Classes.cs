@@ -35,6 +35,11 @@ public class Config
     public bool IsVsync = false;
     public int CurFrameRateIndex = 1;
     public bool[] Sounds;
+    public float MouseSensitivity = 0.5f;
+    public int MouseSensitivityIndex = 0;
+    public float MouseSensitivityCamera = 0.5f;
+    public int MouseSensitivityIndexCamera = 0;
+
     public Config() { }
     public Config(Config source) //コピーコンストラクタ
     {
@@ -48,6 +53,10 @@ public class Config
         IsVsync = source.IsVsync;
         CurFrameRateIndex = source.CurFrameRateIndex;
         Sounds = (bool[])source.Sounds.Clone();
+        MouseSensitivity = source.MouseSensitivity;
+        MouseSensitivityIndex = source.MouseSensitivityIndex;
+        MouseSensitivityCamera = source.MouseSensitivityCamera;
+        MouseSensitivityIndexCamera = source.MouseSensitivityIndexCamera;
     }
 }
 
