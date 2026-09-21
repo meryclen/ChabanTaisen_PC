@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>googjob</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <ul>
+            <li>敵、弾、爆発エフェクトの生成に<strong>ObjectPool</strong>をフル活用しました。本来は、プールから取り出すPrefabは、プールに残っている任意のPrefabでよいため、indexを意識する必要はないのですが、プレイヤー弾がいずれかの敵に当たる度にGetComponent<DamageController>()するのを避けたかったため、プールで扱う敵Prefabの全てに対して、あらかじめGetComponent<DamageController>()したものをListにしてPoolManagerに保持し、プレイヤー弾が当たったらPoolManagerに問い合わせて、当たった敵のDamageControllerを返すようにしました。
+また、現時点では敵弾のフレンドリーファイアは無しにしている（敵同士では当たらない、ダメージはPlayerにしか与えない）ため、あらかじめ全ての敵弾がDamagePlayerを固定で保持するようにしました。（PoolManagerが全ての敵弾のInstantiate時にDamagePlayerコンポーネントを配る。）</li>
+            <li>ScriptableObjectのパラメータを変更するだけでゲーム難易度を自由に変更できるため、私自身で本ゲームを幾度となくプレイし、レベルデザインおよびバグ発見に努めました。</li>            
+            <li>Animation RiggingのIKを使ったプレイヤーの動きは自由に設定したため、コーディング→パラメータ調整→動作確認を細かく繰り返すごり押し設計になりました。銃を構える時、吹っ飛ばされた時、落下した時の、首、肘、膝、手足の動き、などがこれに該当します。</li>
+            <li>structはrefキーワードをつけないと呼び出し元が書き換わらないと言う値型の仕様があるため、使い方を誤るとバグにつながります。参照型であるclassであればその心配は要らないし、[SerializeField]や[System.Serializable]を使えばInspectorで可視化しつつ値を変更できるようになるため、多用しました。</li>
+            <li>よい発想が浮かんだら忘れないうちにメモを取るようにしています。外出時に思いついた場合はノートPCやスマホで自分のアドレス宛にメールを送るようにしています。</li>
+            <li>変数名は、ChatGPTに「プロの開発現場ではどのような変数名が使われているか」を質問して、極力一致させるかそれに近いものにしました。</li>
+        </ul>
+    </body>
+</html>

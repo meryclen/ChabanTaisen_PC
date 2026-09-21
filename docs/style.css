@@ -1,0 +1,104 @@
+body
+{
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: sans-serif;
+}
+h1
+{
+    margin-bottom: 30px;
+}
+
+.hierarchy {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.hierarchy details {
+    margin: 0;
+}
+
+.hierarchy summary {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding: 4px 0 4px 24px;
+}
+
+/* ブラウザ標準の三角形を消す */
+.hierarchy summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 開閉マーク */
+.hierarchy summary::before {
+    content: "▶";
+    position: absolute;
+    left: 4px;
+}
+
+.hierarchy details[open] > summary::before {
+    content: "▼";
+}
+
+/* 子要素 */
+.hierarchy .children {
+    position: relative;
+    margin-left: 24px;
+}
+
+/* 縦線 */
+.hierarchy .children::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 12px;
+    border-left: 1px solid #999;
+}
+
+/* 各ノード */
+.hierarchy .children > details,
+.hierarchy .children > .item {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* 横線 */
+.hierarchy .children > details::before,
+.hierarchy .children > .item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 16px;
+    border-top: 1px solid #999;
+}
+
+/* 最後の要素では縦線を途中で止める */
+.hierarchy .children > :last-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 0;
+    width: 1px;
+    background: white;
+}
+
+/* 見た目を整える改行 */
+p {
+    margin-bottom: 4em;
+}
+
+/* コード引用 */
+pre {
+    padding: 1em;
+    overflow-x: auto;
+    background: #f5f5f5;
+}
+
+pre code {
+    font-family: Consolas, monospace;
+}
